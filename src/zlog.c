@@ -415,7 +415,7 @@ void zlog_profile(void)
 	rc = pthread_rwlock_rdlock(&zlog_env_lock);
 	if (rc) { zc_error("pthread_mutex_lock fail, rc[%d]", rc); return; }
 	zc_warn("------zlog_profile start------ ");
-	zc_warn("is init:[%d]", zlog_env_inited);
+	zc_profile("is init:[%d]", zlog_env_inited);
 	zc_warn("init version:[%d]", zlog_env_version);
 	zlog_conf_profile(zlog_env_conf, ZC_WARN);
 	zlog_record_table_profile(zlog_env_records, ZC_WARN);
